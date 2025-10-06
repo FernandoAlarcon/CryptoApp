@@ -1,9 +1,12 @@
 CryptoInvestment - Dashboard de Criptomonedas
 
-📋 Descripción del Proyecto
+## Descripción del Proyecto
+
 CryptoInvestment es una aplicación web SPA (Single Page Application) desarrollada para un grupo de inversores en criptomonedas que necesitan seguir el rendimiento de un conjunto personalizado de criptomonedas. La aplicación proporciona precios actualizados, cambios porcentuales y volumen del mercado en tiempo real, eliminando la necesidad de usar hojas de cálculo y sitios web dispersos.
 
-🎯 Características Principales
+----
+
+## Características Principales
 
 Interfaz SPA: Navegación dinámica sin recargas de página
 
@@ -17,7 +20,10 @@ Gráficos Interactivos: Visualización de precios con Chart.js
 
 Persistencia de Datos: Almacenamiento en sesión del servidor
 
-🛠️ Tecnologías Utilizadas
+----
+
+## Tecnologías Utilizadas
+
 Backend
 PHP 7.4+ con CodeIgniter 4
 
@@ -32,8 +38,9 @@ Chart.js para visualización de gráficos
 
 Font Awesome para iconografía
 
+--------------------
 
-📦 Instalación y Configuración
+## Instalación y Configuración
 Prerrequisitos
 PHP 7.4 o superior
 
@@ -44,7 +51,7 @@ API Key de CoinMarketCap
 
 -------------
 
-Pasos de Instalación
+## Pasos de Instalación
 Clonar el repositorio
 
 git clone https://github.com/FernandoAlarcon/CryptoApp.git
@@ -73,7 +80,7 @@ Copiar la API Key al archivo .env
 
 --
 
-Ejecutar la aplicación
+## Ejecutar la aplicación
 
 php spark serve
 
@@ -84,39 +91,39 @@ Abrir en el navegador: http://localhost:8080
 
 ----
 
-Uso de la Aplicación
+## Uso de la Aplicación
 
 Funcionalidades
 
-Dashboard Principal
+- Dashboard Principal
 
-Visualización de criptomonedas en seguimiento
+- Visualización de criptomonedas en seguimiento
 
-Gráfico comparativo de precios
+- Gráfico comparativo de precios
 
-Resumen de estadísticas en tiempo real
+- Resumen de estadísticas en tiempo real
 
-Búsqueda y Selección
+- Búsqueda y Selección
 
-Modal de búsqueda con autocompletado
+- Modal de búsqueda con autocompletado
 
-Resultados en tiempo real
+- Resultados en tiempo real
 
-Agregar/eliminar criptomonedas con un click
+- Agregar/eliminar criptomonedas con un click
 
-Datos en Tiempo Real
+- Datos en Tiempo Real
 
-Precios actualizados
+- Precios actualizados
 
-Cambios porcentuales (24h)
+- Cambios porcentuales (24h)
 
-Volumen de mercado
+- Volumen de mercado
 
-Capitalización de mercado
+- Capitalización de mercado
 
+-----------------------
 
-
-Estructura del Proyecto
+## Estructura del Proyecto
 
 CryptoApp/
 ├── app/
@@ -135,9 +142,9 @@ CryptoApp/
 ├── .env
 └── composer.json
 
+---------------------
 
-
-API Endpoints
+## API Endpoints
 
 
 GET /api/cryptos - Lista las top 20 criptomonedas
@@ -147,9 +154,9 @@ GET /api/tracked - Obtiene criptomonedas en seguimiento
 POST /api/track - Agrega criptomoneda a seguimiento
 
 DELETE /api/untrack/:id - Elimina criptomoneda de seguimiento
+ 
 
-
-CoinMarketCap API
+## CoinMarketCap API
 
 /v1/cryptocurrency/listings/latest - Precios actuales
 
@@ -157,7 +164,7 @@ CoinMarketCap API
 
 ------
 
-Requisitos Cumplidos
+## Requisitos Cumplidos
 
 - Requisitos Funcionales
 
@@ -187,7 +194,7 @@ Tiempo real con monedas
 
 -------------------------------------------
 
-Características de Diseño
+## Características de Diseño
 
 
 Interfaz Moderna: Diseño oscuro con gradientes profesionales
@@ -202,14 +209,14 @@ UX Mejorada: Estados de carga, notificaciones, empty states
 
 ---------------------------
 
-Flujo de Trabajo con Git
+## Flujo de Trabajo con Git
 
 main (producción)
 └── develop (desarrollo) 
 
 ---------------------------
 
-Pruebas Realizadas
+## Pruebas Realizadas
 
 ✅ Adaptabilidad en diferentes resoluciones
 
