@@ -1,68 +1,236 @@
-# CodeIgniter 4 Application Starter
+CryptoInvestment - Dashboard de Criptomonedas
 
-## What is CodeIgniter?
+📋 Descripción del Proyecto
+CryptoInvestment es una aplicación web SPA (Single Page Application) desarrollada para un grupo de inversores en criptomonedas que necesitan seguir el rendimiento de un conjunto personalizado de criptomonedas. La aplicación proporciona precios actualizados, cambios porcentuales y volumen del mercado en tiempo real, eliminando la necesidad de usar hojas de cálculo y sitios web dispersos.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+🎯 Características Principales
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Interfaz SPA: Navegación dinámica sin recargas de página
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Tiempo Real: Actualización automática cada 30 segundos
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Responsive Design: Compatible con todos los dispositivos
 
-## Installation & updates
+Selección Personalizada: Buscar y agregar criptomonedas a seguimiento
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+Gráficos Interactivos: Visualización de precios con Chart.js
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+Persistencia de Datos: Almacenamiento en sesión del servidor
 
-## Setup
+🛠️ Tecnologías Utilizadas
+Backend
+PHP 7.4+ con CodeIgniter 4
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+API CoinMarketCap (Plan Gratuito)
 
-## Important Change with index.php
+Frontend
+HTML5, CSS3, JavaScript Vanilla
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Bootstrap 5 para diseño responsive
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Chart.js para visualización de gráficos
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Font Awesome para iconografía
 
-## Repository Management
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+📦 Instalación y Configuración
+Prerrequisitos
+PHP 7.4 o superior
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+Composer
 
-## Server Requirements
+API Key de CoinMarketCap
 
-PHP version 8.1 or higher is required, with the following extensions installed:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+-------------
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+Pasos de Instalación
+Clonar el repositorio
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+git clone https://github.com/FernandoAlarcon/CryptoApp.git
+cd CryptoApp
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Instalar dependencias
+composer install
+
+Configurar variables de entorno
+cp env .env
+
+
+Editar el archivo .env y agregar:
+
+app.baseURL = 'http://localhost:8080/'
+COINMARKETCAP_API_KEY = "tu-api-key-de-coinmarketcap"
+
+
+Obtener API Key de CoinMarketCap
+
+Registrarse en CoinMarketCap API
+
+Seleccionar plan "Basic" (gratuito)
+
+Copiar la API Key al archivo .env
+
+--
+
+Ejecutar la aplicación
+
+php spark serve
+
+
+Acceder a la aplicación
+
+Abrir en el navegador: http://localhost:8080
+
+----
+
+Uso de la Aplicación
+
+Funcionalidades
+
+Dashboard Principal
+
+Visualización de criptomonedas en seguimiento
+
+Gráfico comparativo de precios
+
+Resumen de estadísticas en tiempo real
+
+Búsqueda y Selección
+
+Modal de búsqueda con autocompletado
+
+Resultados en tiempo real
+
+Agregar/eliminar criptomonedas con un click
+
+Datos en Tiempo Real
+
+Precios actualizados
+
+Cambios porcentuales (24h)
+
+Volumen de mercado
+
+Capitalización de mercado
+
+
+
+Estructura del Proyecto
+
+CryptoApp/
+├── app/
+│   ├── Controllers/
+│   │   ├── CryptoController.php
+│   │   └── Dashboard.php
+│   ├── Libraries/
+│   │   └── CoinMarketCapAPI.php
+│   └── Views/
+│       └── dashboard.php
+├── public/
+│   ├── assets/
+│   │   └── js/
+│   │       └── app.js
+│   └── index.php
+├── .env
+└── composer.json
+
+
+
+API Endpoints
+
+
+GET /api/cryptos - Lista las top 20 criptomonedas
+
+GET /api/tracked - Obtiene criptomonedas en seguimiento
+
+POST /api/track - Agrega criptomoneda a seguimiento
+
+DELETE /api/untrack/:id - Elimina criptomoneda de seguimiento
+
+
+CoinMarketCap API
+
+/v1/cryptocurrency/listings/latest - Precios actuales
+
+/v1/cryptocurrency/quotes/latest - Datos específicos
+
+------
+
+Requisitos Cumplidos
+
+- Requisitos Funcionales
+
+SPA con cambios dinámicos sin recarga
+
+Seguimiento de criptomonedas personalizadas
+
+Precios actualizados en tiempo real
+
+Cambios porcentuales y volumen de mercado
+
+Gráficos históricos e interactivos
+
+Búsqueda y selección de criptomonedas
+
+- Requisitos No Funcionales
+
+Interfaz completamente responsive
+
+Actualización automática de datos
+
+Persistencia de datos en sesión
+
+Compatibilidad multi-dispositivo
+
+Tiempo real con monedas
+
+-------------------------------------------
+
+Características de Diseño
+
+
+Interfaz Moderna: Diseño oscuro con gradientes profesionales
+
+Glassmorphism: Efectos visuales modernos
+
+Animaciones Suaves: Transiciones y hover effects
+
+Responsive: Adaptable a móviles, tablets y desktop
+
+UX Mejorada: Estados de carga, notificaciones, empty states
+
+---------------------------
+
+Flujo de Trabajo con Git
+
+main (producción)
+└── develop (desarrollo) 
+
+---------------------------
+
+Pruebas Realizadas
+
+✅ Adaptabilidad en diferentes resoluciones
+
+✅ Actualización dinámica de datos
+
+✅ Funcionamiento en tiempo real
+
+✅ Responsive design
+
+✅ Compatibilidad entre navegadores
+
+
+
+
+
+Desarrollo
+Desarrollador: Fernando Alarcón
+Repositorio: https://github.com/FernandoAlarcon/CryptoApp
+Tecnología: PHP CodeIgniter 4 + JavaScript Vanilla
+
+
+
+
+
